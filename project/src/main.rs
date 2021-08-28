@@ -1,6 +1,15 @@
 fn main() {
-    for number in (1..4).rev() {
-        println!("{}!", number);
+    
+}
+
+fn first_word(S: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
     }
-    println!("LIFTOFF!!!");
+
+    s.len()
 }
