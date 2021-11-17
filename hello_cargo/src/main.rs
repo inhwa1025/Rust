@@ -13,12 +13,13 @@ fn main() {
         SpreadsheetCell::Float(10.12),
     ];
 
-    //let mut s = String::new();
+    //push_str
+    let mut ss = String::from("foo");
+    ss.push_str("bar");
 
-    let data = "initial contents";
-
-    let s = data.to_string();
-
-    // the method also works on a literal directly:
-    // let s = "initial contents".to_string();
+    //format! macro
+    let s1 = String::from("tic");
+    let s2 = String::from("tac");
+    let s3 = String::from("toe");
+    let s = format!("{}-{}-{}", s1, s2, s3);
 }
