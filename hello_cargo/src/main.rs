@@ -22,4 +22,12 @@ fn main() {
     let s2 = String::from("tac");
     let s3 = String::from("toe");
     let s = format!("{}-{}-{}", s1, s2, s3);
+
+    //string slicing
+    for c in "Здравствуйте".chars() {
+        println!("{}", c);
+    }
+    for b in "Здравствуйте".bytes() {
+        println!("{}", b);
+    }
 }
