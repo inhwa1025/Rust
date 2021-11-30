@@ -43,7 +43,7 @@ fn main() {
     for (key, value) in &scores {
         println!("{}: {}", key, value);
     }
-    
+
 }
 
 //에러처리 - result
@@ -53,4 +53,13 @@ fn read_username_from_file() -> Result<String, io::Error> {
     File::open("hello.txt")?.read_to_string(&mut s)?;
 
     Ok(s)
+}
+
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4); //같음을 나타내는 매크로
+    }
 }
