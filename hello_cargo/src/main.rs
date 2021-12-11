@@ -3,6 +3,19 @@ use std::io;
 use std::io::Read;
 use std::fs::File;
 
+// generic type
+fn largest<T>(list: &[T]) -> T {
+    let mut largest = list[0];
+
+    for &item in list.iter() {
+        if item > largest {
+            largest = item;
+        }
+    }
+
+    largest
+}
+
 fn main() {
     println!("Hello, world!");
 
@@ -44,6 +57,13 @@ fn main() {
         println!("{}: {}", key, value);
     }
 
+    //generic type
+    let numbers = vec![34, 50, 25, 100, 65];
+    let result = largest(&numbers);
+    println!("The largest number is {}", result);
+    let chars = vec!['y', 'm', 'a', 'q'];
+    let result = largest(&chars);
+    println!("The largest char is {}", result);
 }
 
 //에러처리 - result
@@ -54,6 +74,7 @@ fn read_username_from_file() -> Result<String, io::Error> {
 
     Ok(s)
 }
+
 
 
 #[cfg(test)]
