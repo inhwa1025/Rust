@@ -16,6 +16,11 @@ fn largest<T>(list: &[T]) -> T {
     largest
 }
 
+struct Point<T, U> {
+    x: T,
+    y: U,
+}
+
 fn main() {
     println!("Hello, world!");
 
@@ -57,13 +62,18 @@ fn main() {
         println!("{}: {}", key, value);
     }
 
-    //generic type
+    //generic type -function
     let numbers = vec![34, 50, 25, 100, 65];
     let result = largest(&numbers);
     println!("The largest number is {}", result);
     let chars = vec!['y', 'm', 'a', 'q'];
     let result = largest(&chars);
     println!("The largest char is {}", result);
+
+    //generic type -struct
+    let both_integer = Point { x: 5, y: 10 };
+    let both_float = Point { x: 1.0, y: 4.0 };
+    let integer_and_float = Point { x: 5, y: 4.0 };
 }
 
 //에러처리 - result
