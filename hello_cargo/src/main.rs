@@ -2,6 +2,8 @@ use std::collections::HashMap;
 use std::io;
 use std::io::Read;
 use std::fs::File;
+use hello_cargo::Tweet;
+use hello_cargo::Summarizable;
 
 // generic type
 /*fn largest<T>(list: &[T]) -> T {
@@ -88,6 +90,15 @@ fn main() {
     let p2 = Point { x: "Hello", y: 'c' };
     let p3 = integer_and_float.mixup(p2);
     println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
+
+    //trait (lib.rs 참고)
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course, as you probably already know, people"),
+        reply: false,
+        retweet: false,
+    };
+    println!("1 new tweet: {}", tweet.summary());
 }
 
 //에러처리 - result
