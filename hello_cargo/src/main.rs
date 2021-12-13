@@ -2,8 +2,7 @@ use std::collections::HashMap;
 use std::io;
 use std::io::Read;
 use std::fs::File;
-use hello_cargo::Tweet;
-use hello_cargo::Summarizable;
+use hello_cargo::*;
 
 // generic type
 /*fn largest<T>(list: &[T]) -> T {
@@ -99,6 +98,15 @@ fn main() {
         retweet: false,
     };
     println!("1 new tweet: {}", tweet.summary());
+
+    let article = NewsArticle {
+        headline: String::from("Penguins win the Stanley Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from("The Pittsburgh Penguins once again are the best
+        hockey team in the NHL."),
+    };
+    println!("New article available! {}", article.summary());
 }
 
 //에러처리 - result
