@@ -6,6 +6,10 @@ pub trait Summarizable {
     }
 }
 
+pub fn notify<T: Summarizable>(item: T) {
+    println!("Breaking news! {}", item.summary());
+}
+
 pub struct NewsArticle {
     pub headline: String,
     pub location: String,
