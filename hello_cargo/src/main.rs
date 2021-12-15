@@ -3,9 +3,10 @@ use std::io;
 use std::io::Read;
 use std::fs::File;
 use hello_cargo::*;
+use std::cmp::PartialOrd;
 
 // generic type
-/*fn largest<T>(list: &[T]) -> T {
+fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
     let mut largest = list[0];
 
     for &item in list.iter() {
@@ -15,7 +16,7 @@ use hello_cargo::*;
     }
 
     largest
-}*/
+}
 
 struct Point<T, U> {
     x: T,
